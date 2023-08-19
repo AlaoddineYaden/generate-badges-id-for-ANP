@@ -1,0 +1,35 @@
+<app-alert *ngIf="alertData" [data]="alertData"></app-alert>
+
+<div class="main_form">
+    <table id="customers">
+      <tr>
+        <th>Cnie</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>organisme</th>
+        <th>fonction</th>
+        <th>date depot dossier</th>
+        <th>date envoi DAI</th>
+        <th>date retour DAI</th>
+        <th>zone acces</th>
+        <th>status</th>
+        <th>Actions</th>
+      </tr>
+      <tr *ngFor="let e of badges">
+        <td>{{e.cnie}}</td>
+        <td>{{e.nom}}</td>
+        <td>{{e.prenom}}</td>
+        <td>{{e.organisme}}</td>
+        <td>{{e.fonction}}</td>
+        <td>{{e.date_depot_dossier}}</td>
+        <td>{{e.date_envoi_dai}}</td>
+        <td>{{e.date_retour_dai}}</td>
+        <td><ul>
+            <li *ngFor="let z of e.zone_acces">{{z}} </li>
+        </ul></td>
+        <td>{{e.status}}</td>
+        
+        <td><button class="button button3" (click)="deleteBadgeById(e)" [disabled]="isFetchingItems">delete</button></td>
+      </tr>
+    </table>
+  </div>

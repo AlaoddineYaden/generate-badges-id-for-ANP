@@ -1,0 +1,135 @@
+<app-alert *ngIf="alertData" [data]="alertData"></app-alert>
+<div class="main_form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="Cnie" class="form-label">Cnie</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Cnie"
+        name="Cnie"
+        formControlName="Cnie"
+        placeholder="Cnie"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Nom" class="form-label">Nom</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Nom"
+        name="Nom"
+        formControlName="Nom"
+        placeholder="Nom"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Prenom" class="form-label">Prenom</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Prenom"
+        name="Prenom"
+        formControlName="Prenom"
+        placeholder="Prenom"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Organisme" class="form-label">Organisme</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Organisme"
+        name="Organisme"
+        formControlName="Organisme"
+        placeholder="Organisme"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Fonction" class="form-label">Fonction</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Fonction"
+        name="Fonction"
+        formControlName="Fonction"
+        placeholder="Fonction"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="date_depot_dossier" class="form-label"
+        >date depot dossier</label
+      >
+      <input
+        type="date"
+        class="form-control"
+        id="date_depot_dossier"
+        name="date_depot_dossier"
+        formControlName="date_depot_dossier"
+        placeholder="date_depot_dossier"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="date_envoi_dai" class="form-label">date envoi dai</label>
+      <input
+        type="date"
+        class="form-control"
+        id="date_envoi_dai"
+        name="date_envoi_dai"
+        formControlName="date_envoi_dai"
+        placeholder="date_envoi_dai"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="date_retour_dai" class="form-label">date retour dai</label>
+      <input
+        type="date"
+        class="form-control"
+        id="date_retour_dai"
+        name="date_retour_dai"
+        formControlName="date_retour_dai"
+        placeholder="date retour dai"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="zone_acces" class="form-label">zone acces</label>
+      <div class="form-check">
+        <input class="form-check-input" formControlName="zone_acces1" type="checkbox" value="green" id="zone_acces1">
+        <label class="form-check-label" for="zone_acces1">
+          la pêche côtière
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" formControlName="zone_acces2" type="checkbox" value="blue" id="zone_acces2">
+        <label class="form-check-label" for="zone_acces2">
+          la pêche hauturière
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" formControlName="zone_acces3" type="checkbox" value="chestnut" id="zone_acces3">
+        <label class="form-check-label" for="zone_acces3">
+          Mareyeurs (halle aux poissons et locaux des mareyeurs)
+        </label>
+      </div>
+      
+    </div>
+    <div class="mb-3">
+      <label for="status" class="form-label">status</label>
+      <input
+        type="date"
+        class="form-control"
+        id="status"
+        name="status"
+        formControlName="status"
+        placeholder="status"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="inputGroupFile01">Upload</label>
+      <input type="file" class="form-control" (change)="onFileSelected($event)" id="inputGroupFile01" accept=".jpeg, .png, .jpg">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid || !selectedFile || isFetchingItems">
+      Submit
+    </button>
+  </form>
+</div>
